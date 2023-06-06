@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color:pink">
+ <div class ="registration-form">
+    <h1> REGISTRATION FORM</h1>
+     <form action="register" method="post">
+         {% csrf_token %}
+         <p> First_name:</p>
+            <input type="text" name="first_name" placeholder="Firstname">
+         <p> Last_name:</p>
+            <input type="text" name="last_name" placeholder="Lastname">
+         <p> Email-Id:</p>
+            <input type="email" name="email" placeholder="Email-Id">
+         <p> Username:</p>
+            <input type="text" name="username" placeholder="Username">
+         <p> Password:</p>
+            <input type="password" name="password" placeholder="Password">
+         <p> Confirm Password:</p>
+         <input type="password" name="cpassword" placeholder="Password">
+         <br>
+         <br>
+         <button type="submit"> Register </button>
+     </form>
+     {% for msg in messages %}
+     <h2> {{msg}} </h2>
+     {% endfor %}
+</div>
+
+</body>
+</html>
